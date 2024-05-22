@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
-import RouterConfig from '@/router.config'
+import RouterConfig from '@/router.config';
 
 import '@/assets/css/app.css'
 
