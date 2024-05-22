@@ -7,6 +7,8 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'prettier',
     'prettier/@typescript-eslint',
+    'prettier/react',
+    'eslint-config-prettier'
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
@@ -16,6 +18,6 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-    "prettier/prettier": "error",
+    'prettier/prettier': 'error',
   },
 }
