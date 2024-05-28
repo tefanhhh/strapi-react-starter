@@ -1,4 +1,5 @@
 import instance from '@/api/instance'
+import { NavigationBar } from '@/models/navigation-bar.model'
 import { User } from '@/models/user.model'
 
 export class API<T> {
@@ -28,5 +29,11 @@ export class API<T> {
 export class Users extends API<User> {
   constructor() {
     super('users')
+  }
+}
+
+export class NavigationBars extends API<NavigationBar> {
+  constructor() {
+    super('navigation-bars')
   }
 }
