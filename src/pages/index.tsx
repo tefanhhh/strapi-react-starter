@@ -77,7 +77,7 @@ function prettyDate(date: number | Date | undefined) {
 }
 
 async function getUsers() {
-  const { data } = await api.users.fetchAll()
+  const { data } = await api.navigationBars.fetchAll()
   console.log(data)
   return data
 }
