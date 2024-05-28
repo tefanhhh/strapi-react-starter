@@ -1,5 +1,6 @@
 import * as React from 'react'
 import * as Toast from '@radix-ui/react-toast'
+import api from '@/api'
 
 import DefaultLayout from '@/layouts/default'
 
@@ -9,6 +10,7 @@ const ToastDemo = () => {
   const timerRef = React.useRef(0)
 
   React.useEffect(() => {
+    getUsers()
     return () => clearTimeout(timerRef.current)
   }, [])
 
@@ -16,7 +18,7 @@ const ToastDemo = () => {
     <DefaultLayout>
       <Toast.Provider swipeDirection="right">
         <button
-          className="inline-flex items-center justify-center rounded font-medium text-[15px] px-[15px] leading-[35px] h-[35px] bg-white text-violet11 shadow-[0_2px_10px] shadow-blackA4 outline-none hover:bg-mauve3 focus:shadow-[0_0_0_2px] focus:shadow-black"
+          className="inline-flex items-center justify-center rounded font-medium text-[15px] px-[15px] leading-[35px] h-[35px] bg-white text-violet11 shadow-[0_2px_10px] shadow-blackA4 outline-none hover:bg-mauve3"
           onClick={() => {
             setOpen(false)
             window.clearTimeout(timerRef.current)
@@ -72,6 +74,12 @@ function prettyDate(date: number | Date | undefined) {
     dateStyle: 'full',
     timeStyle: 'short',
   }).format(date)
+}
+
+async function getUsers() {
+  const { data } = await api.users.fetchAll()
+  console.log(data)
+  return data
 }
 
 export default ToastDemo
